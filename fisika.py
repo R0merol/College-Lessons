@@ -1,6 +1,3 @@
-from sympy import *
-
-
 class Fisika:
     def __init__(self, t1):
         self.t1 = t1
