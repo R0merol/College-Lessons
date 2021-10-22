@@ -86,3 +86,37 @@ def compress_list():
     b = ['x', 'y']
     c = [(x, y) for x in a for y in b]
     print(c)
+
+
+def soal_abiyaz():
+    # Hitung jumlah bilangan prima
+    num = int(input("N = "))
+    list_prima = []
+    for i in range(1, num + 1):
+        if i != 0 and i != 1:
+            n = 2
+            prima = True
+            while n < i and prima:
+                if i % n == 0:
+                    prima = False
+                n = n + 1
+            if prima:
+                list_prima.append(i)
+    print(f"Bilangan prima = {list_prima}")
+
+    # Hitung jumlah penambahan yang mungkin
+    jumlah_penambahan = 0
+    ada_prima = False
+    for i in list_prima:
+        for j in list_prima:
+            if i + j == num:
+                print(f"{i} + {j} = {num}")
+                list_prima.remove(list_prima[0])
+                jumlah_penambahan += 1
+                ada_prima = True
+
+    # Cek apakah ada jumlah penambahan atau tidak
+    if ada_prima:
+        print(f"Jumlah penambahan bilangan prima = {jumlah_penambahan}")
+    else:
+        print("Tidak ada bilangan prima")

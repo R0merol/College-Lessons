@@ -1,8 +1,5 @@
-import alpro
-
-
 def main():
-    alpro.compress_list()
+    print("Hello World")
 
 
 if __name__ == '__main__':
